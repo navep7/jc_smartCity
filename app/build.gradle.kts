@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -50,6 +51,16 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.hilt.android)
+
+    implementation(libs.retrofit)
+    //noinspection UseTomlInstead
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0") // or converter-moshi
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.accompanist.permissions.v02413rc)
+    implementation(libs.play.services.location)
+    implementation(libs.accompanist.permissions)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
